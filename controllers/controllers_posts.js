@@ -3,7 +3,7 @@ const posts = require("../db/db_posts.js")
 //serve per aggiornare il contenuto del file db
 const fs = require("fs")
 
-//primo post in db
+//leggo i posts
 const index = (req, res) => {
     res.json({
       data: posts,
@@ -11,7 +11,7 @@ const index = (req, res) => {
     })
 }
 
-//aggiungo i post
+//aggiungo un post
 const store = (req, res) => {
     const post = {
         title: req.body.title,
@@ -56,11 +56,31 @@ const update = (req, res) => {
     })
 }
 
+//elimino un post
+const destroy = (req, res) => {
+    const post = posts.find(post => post.slug.toLowerCase() ===(req.params.slug))
 
+    if(!post){
+        return res.status(404).json({
+            error: `Post dallo slug ${req.params.slug} non trovato`
+        })
+    }
+    
+    const new_posts = posts.filter(post => post.slug.toLowerCase() !==(req.params.slug))
+
+    //aggiorno il contenuto dell'array permanentemente del file db
+    fs.writeFileSync("./db/db_posts.js", `module.exports = ${JSON.stringify(new_posts, null, 4)}`)
+
+    res.status(200).json({
+        status: 200,
+        data: new_posts,
+        count: new_posts.length
+    })
+}
 
 module.exports = {
     index,
     store,
     update,
-/*     destroy */
+    destroy
 }

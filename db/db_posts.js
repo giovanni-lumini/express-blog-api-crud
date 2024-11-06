@@ -11,8 +11,8 @@ module.exports = [
         ]
     },
     {
-        "title": "Cracker alla barbabietola",
-        "slug": "cracker-alla-barbabeitola",
+        "title": "Cracker alla barbabietola1",
+        "slug": "cracker-alla-barbabeitola1",
         "content": "I cracker alla barbabietola sono uno snack stuzzicante e originale da preparare in casa utilizzando ingredienti semplici e genuini. Queste sfogliette dal colore brillante non passeranno inosservate nel vostro cestino del pane e arricchiranno la tavola con il loro gusto unico e accattivante.",
         "tags": [
             "Antipasti",
@@ -22,7 +22,7 @@ module.exports = [
     },
     {
         "title": "Cracker alla barbabietola2",
-        "slug": "cracker-alla-barbabeitola",
+        "slug": "cracker-alla-barbabeitola2",
         "content": "I cracker alla barbabietola sono uno snack stuzzicante e originale da preparare in casa utilizzando ingredienti semplici e genuini. Queste sfogliette dal colore brillante non passeranno inosservate nel vostro cestino del pane e arricchiranno la tavola con il loro gusto unico e accattivante.",
         "tags": [
             "Antipasti",
@@ -32,17 +32,7 @@ module.exports = [
     },
     {
         "title": "Cracker alla barbabietola3",
-        "slug": "cracker-alla-barbabeitola",
-        "content": "I cracker alla barbabietola sono uno snack stuzzicante e originale da preparare in casa utilizzando ingredienti semplici e genuini. Queste sfogliette dal colore brillante non passeranno inosservate nel vostro cestino del pane e arricchiranno la tavola con il loro gusto unico e accattivante.",
-        "tags": [
-            "Antipasti",
-            "Ricette vegetariane",
-            "Ricette al forno"
-        ]
-    },
-    {
-        "title": "Cracker alla barbabietola4",
-        "slug": "cracker-alla-barbabeitola",
+        "slug": "cracker-alla-barbabeitola3",
         "content": "I cracker alla barbabietola sono uno snack stuzzicante e originale da preparare in casa utilizzando ingredienti semplici e genuini. Queste sfogliette dal colore brillante non passeranno inosservate nel vostro cestino del pane e arricchiranno la tavola con il loro gusto unico e accattivante.",
         "tags": [
             "Antipasti",
