@@ -31,7 +31,36 @@ const store = (req, res) => {
     })
 }
 
+
+//modifico un post
+const update = (req, res) => {
+    const post = posts.find(post => post.title.toLowerCase() ===(req.params.title))
+
+    if(!post){
+        return res.status(404).json({
+            error: `Post dal titolo ${req.params.title} non trovato`
+        })
+    }
+    
+    post.title = req.body.title
+    post.slug = req.body.slug
+    post.content = req.body.content
+    post.tags = req.body.tags
+
+    //aggiorno il contenuto dell'array permanentemente del file db
+    fs.writeFileSync("./db/db_posts.js", `module.exports = ${JSON.stringify(posts, null, 4)}`)
+
+    res.status(200).json({
+        status: 200,
+        data: posts
+    })
+}
+
+
+
 module.exports = {
     index,
-    store
+    store,
+    update,
+/*     destroy */
 }
