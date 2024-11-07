@@ -10,6 +10,7 @@ const port = 3000
 
 const routers_posts = require("./routers/routers_posts.js") //routers
 const not_found_middleware = require("./middlewares/not_found.js")
+const logger_middleware = require("./middlewares/logger_middleware.js")
 
 //per quando usiamo post (e non get) per leggere il formato json
 app.use(express.json())
@@ -18,6 +19,9 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
+app.use('/posts', logger_middleware)
+
 app.use('/posts', routers_posts)
 
-app.use (not_found_middleware)
+app.use(not_found_middleware)
+
