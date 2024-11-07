@@ -19,9 +19,22 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
+/* app.use('/posts', (req, res, next) => {
+    throw new Error("You broke everything dude! 💥")
+}) */
+
 app.use('/posts', logger_middleware)
 
 app.use('/posts', routers_posts)
 
 app.use(not_found_middleware)
+
+/* app.use((err, req, res, next) => {
+    console.log("Error: ", err.message);
+    console.error(err.stack);
+    res.status(500).send({
+      message: "Something went wrong",
+      error: err.message
+    })
+}); */
 

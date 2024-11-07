@@ -1,6 +1,6 @@
 const logger_middleware = (req, res, next) => {
     const now = new Date();
-    console.error(`
+    console.log(`
         Date: ${now}
         Method: ${req.method}
         url: ${req.baseUrl}
